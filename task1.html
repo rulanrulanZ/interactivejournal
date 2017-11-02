@@ -1,0 +1,96 @@
+<html>
+    <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js">
+    </script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+<style>
+</style>
+	<body>
+		<div id="game" style='font-size: 40pt; background-color:black;' onkeydown="ll(event)" tabindex="0">
+		</div>
+	</body>
+	<script>
+i1 = randomInt();
+i2 = randomInt();
+block = false;
+document.getElementById('game').appendChild(panel('leftPanel',i1.toString()));
+document.getElementById('game').appendChild(panel('rightPanel',i2.toString()));
+
+function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function randomInt(){
+    a = Math.random();
+    return Math.floor(10*a);
+}
+function panel(name,text){
+    a = document.createElement('div');
+    a.setAttribute('id',name);
+    a.setAttribute('style',"float: left;width:25%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = text;
+    return a;
+
+}
+function correct(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
+    a.innerHTML = "Correct";
+    return a;
+
+}
+function wrong(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
+    a.innerHTML = "Wrong";
+    return a;
+
+}
+
+function showans(key){
+    g = document.getElementById('game');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    if(i1 > i2 && key == "f" || i1 < i2 && key == "j")
+    {
+        g.appendChild(correct())
+    }
+    else
+    {
+        g.appendChild(wrong())
+    }
+    return;
+}
+function test1(){
+    console.log('aaa');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    i1 = randomInt();
+    i2 = randomInt();
+    while(i2 === i1)
+        i2 = randomInt();
+    g.appendChild(panel('leftPanel',i1.toString()));
+    g.appendChild(panel('rightPanel',i2.toString()));
+}
+
+function ll(event){
+    if(block)
+        return;
+    if(event.key != "j" && event.key != "f")
+        return;
+    block = true;
+    showans(event.key);
+    sleep(500).then(()=>{test1();});
+    block = false;
+}
+
+	</script>
+</html>
