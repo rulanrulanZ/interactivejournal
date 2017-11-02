@@ -2,6 +2,13 @@
 <meta charset="utf-8">
 <script src="https://distill.pub/template.v1.js"></script>
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 <script type="text/front-matter">
   title: "Article Title"
   description: "Description of the post"
@@ -45,7 +52,7 @@
 			<p>First, we asked whether radical expressions are represented as continuous magnitudes integrated on the mental number line much like natural numbers, integers, and rational numbers. We refer to this proposal as the mental number line hypothesis. An alternative proposal is that people use processes that capitalize on the discrete structure of radical expressions. For instance, when judging the greater or lesser number in the pair (√(3 ), √(8 )), people may ignore the radical signs and only compare the radicand components (3, 8) using their magnitude representations of natural numbers. This is possible because when x and y are non-negative, judgments of (√(x ), √(y )) and (x, y) are equivalent. We refer to this as the equivalence strategy hypothesis.</p>
 			<p>Second, we investigated whether people process irrational numbers by strategically anchoring them on more concrete concepts like natural numbers and perfect squares. Specifically, we hypothesized the possible use of a multiplication strategy on the MC task whereby perfect square pairs like (√4, √(9 )) are transformed to computationally analogous “tie” multiplication problems like 2 × 2 and 3 × 3. Such a transformation might facilitate comparison because tie problems are processed more quickly than non-tie problems of comparable size. On the NLE task, irrational numbers might be estimated in relation to perfect squares – the landmark strategy. For example, people may estimate the positions of irrational numbers like √(3 ) by referencing the positions of neighboring perfect squares like √(1 ) and √(4 ). Finally, people may leverage their knowledge of perfect squares during arithmetic problem-solving. When simplifying √72, an inefficient strategy would be to decompose the radicand into its prime factors and then shift pairs of common factors outside the radical sign – the prime factorization strategy. For example:</p>
 				<p>√72	=	√(2×36)<p>
-			<p>=	√(2×2×18)</p>
+			<p id="test">=	$$\sqrt{2*2*18}$$</p>
 			<p>=	√(2×2×2×9)</p>
 			<p>=	√(2×2×2×3×3)</p>
 			<p>=	2√(2×3×3)</p>
