@@ -14,6 +14,8 @@
 	<script>
 i1 = randomInt();
 i2 = randomInt();
+while(i2 === i1)
+    i2 = randomInt();
 block = false;
 document.getElementById('game').appendChild(panel('leftPanel',i1.toString()));
 document.getElementById('game').appendChild(panel('rightPanel',i2.toString()));
@@ -46,7 +48,24 @@ function wrong(){
     a = document.createElement('div');
     a.setAttribute('id',"ans");
     a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
-    a.innerHTML = "Wrong";
+    a.innerHTML = "Incorrect";
+    return a;
+
+}
+
+function blank(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = " ";
+    return a;
+
+}
+function whitedot(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = ".";
     return a;
 
 }
@@ -57,7 +76,7 @@ function showans(key){
     {
         g.removeChild(g.lastChild);
     }
-    if(i1 > i2 && key == "f" || i1 < i2 && key == "j")
+    if(i1 > i2 && key == "z" || i1 < i2 && key == "m")
     {
         g.appendChild(correct())
     }
@@ -68,7 +87,6 @@ function showans(key){
     return;
 }
 function test1(){
-    console.log('aaa');
     while(g.hasChildNodes())
     {
         g.removeChild(g.lastChild);
@@ -79,17 +97,41 @@ function test1(){
         i2 = randomInt();
     g.appendChild(panel('leftPanel',i1.toString()));
     g.appendChild(panel('rightPanel',i2.toString()));
+    block = false;
+}
+function show_blank1(){
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(blank());
+    sleep(250).then(()=>{show_dot();});
+}
+function show_dot(){
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(whitedot());
+    sleep(1000).then(()=>{show_blank2();});
+}
+function show_blank2(){
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(blank());
+    sleep(500).then(()=>{test1();});
 }
 
 function ll(event){
     if(block)
         return;
-    if(event.key != "j" && event.key != "f")
+    if(event.key != "z" && event.key != "m")
         return;
     block = true;
     showans(event.key);
-    sleep(500).then(()=>{test1();});
-    block = false;
+    sleep(500).then(()=>{show_blank1();});
 }
 
 	</script>
