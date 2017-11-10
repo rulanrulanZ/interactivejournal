@@ -1,0 +1,93 @@
+<html>
+<style>
+</style>
+<script>
+
+</script>
+	<body>
+		<div id="game" style='font-size: 25pt;font-family: Verdana;width: 800px; height: 80px;' onclick="aaa(event)" tabindex="0">
+		</div>
+	</body>
+	<script>
+block = false;
+
+function randomInt(){
+    a = Math.random();
+    return Math.floor(10*a);
+}
+function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+}
+function aaa(event){
+    if(block)
+        return;
+    g  =document.getElementById('game');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    block = true;
+    x = event.clientX;
+    maxX = event.target.offsetWidth;
+    sleep(500).then(()=>{problem();});
+    return;
+}
+function line(){
+    ll = document.createElement('div');
+    tp = document.createElement('div');
+    ll.setAttribute('style',"float: left;width:100%;height:50%;");
+    tp.setAttribute('id',"tp");
+    tp.setAttribute('style',"float: left;width:100%;height:50%;border-width:medium; border-left-style: solid;border-top-style: solid;border-right-style: solid;");
+    tp.innerHTML = "<br>";
+    bt = document.createElement('div');
+    bt.setAttribute('id',"bt");
+    bt.innerHTML = "<br>";
+    bt.setAttribute('style',"float: left;width:100%;height:50%;border-width:medium; border-left-style: solid;border-right-style: solid;");
+    ll.appendChild(bt);
+    ll.appendChild(tp);
+    return ll;
+}
+function label(){
+    ll = document.createElement('div');
+    tp = document.createElement('div');
+    bt = document.createElement('div');
+    tp.innerHTML = "0";
+    bt.innerHTML = "10";
+    bt.setAttribute('style',"float: left;width:10%;height:100%;display:flex;font-weight:bold;");
+    tp.setAttribute('style',"float: left;width:200%;height:100%;display:flex;font-weight:bold;");
+    ll.setAttribute('style',"float: left;width:100%;height:50%;display:flex;");
+    ll.appendChild(tp);
+    ll.appendChild(bt);
+    return ll;
+}
+function instructions(){
+    ll = document.createElement('div');
+
+    i1 = randomInt();
+    ll.innerHTML = "<br><br>Estimate the position of <b>"+i1.toString()+"</b> on the number line shown.";
+    ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.55vw;align-items:center;justify-content:center;");
+    return ll;
+}
+function problem(){
+    block = false;
+    g  =document.getElementById('game');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    ll = document.createElement('div');
+    g.appendChild(label());
+    g.appendChild(line());
+    g.appendChild(instructions());
+}
+function ii(){
+    ll = document.createElement('div');
+    ll.innerHTML = "In the following tasks, you will be shown different numbers. Please estimate their positions as accurately as possible by left-clicking on the number line. To begin, click once on the words shown.";
+    return ll;
+}
+
+
+problem();
+
+	</script>
+</html>
