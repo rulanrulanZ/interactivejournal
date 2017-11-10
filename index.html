@@ -9,6 +9,8 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
+    <link href="articlestyle.css" rel="stylesheet">
+
 <script type="text/front-matter">
   title: "Article Title"
   description: "Description of the post"
@@ -24,6 +26,7 @@ MathJax.Hub.Config({
 	  <h1>How the Abstract Becomes Concrete</h1>
 	    <h2>Irrational Numbers Are Anchored on Natural Numbers and Perfect Squares</h2>
 		  <dt-byline></dt-byline>
+		  <dt-article class="centered">
 		  <h3> Abstract </h3>
 
 		    <p>	Mathematical cognition research has largely emphasized concepts that can be directly perceived or grounded in visuospatial referents. These include concrete number systems like natural numbers, integers, and rational numbers. Here, we investigate how a more abstract number system, the irrationals denoted by radical expressions like , is understood across three tasks. Performance on a magnitude comparison task suggests that people interpret irrational numbers – specifically, the radicands of radical expressions – as natural numbers. Response times and strategy self-reports during number line estimation reveal that the spatial locations of irrationals are determined by anchoring to neighboring perfect squares. Perfect squares also facilitate the evaluation of complex arithmetic expressions. These converging results align with a constellation of related anchoring phenomena spanning tasks and number systems of varying complexity. Accordingly, we propose that the task-specific recruitment of more concrete representations, formal anchoring, is an important mechanism for understanding and teaching mathematics.
@@ -69,7 +72,9 @@ MathJax.Hub.Config({
 			<p>Overall, 81 undergraduate students from a large Midwestern university were recruited via flyers posted across campus. We posted flyers in buildings housing diverse departments and those frequented by students from different majors to represent the university population faithfully. Their ages ranged from 18 to 24 years (M = 20.5, SD = 1.7). Our sample consisted of more females than males (57 vs. 24). This is more skewed than the overall percentage of female vs. male undergraduates at the university (52% vs. 48%). However, it is consistent with the percentage of females in the college of education (61% vs. 39%), which is where the laboratory is physically located. On a questionnaire, 30.3% of participants self-reported that they were enrolled in a major emphasizing quantitative and analytic skills such as science, technology, engineering, mathematics, finance, or economics. This percentage is consistent with the distribution of such majors at the university. Experimental sessions spanned about 60 minutes and all participants received $12 in compensation. The protocol was approved by the local Institutional Review Board.</p>
 			<h3>Design and Materials</h3>
 			<p>We employed a within-subjects experimental design, with each participant completing all levels of the four experimental tasks. See Table 1 for an overview of the design and materials. All experimental materials are available via the Open Science Framework (https://osf.io/6s9pc/#).</p>
-			<p><img src="Screen Shot 2017-10-26 at 12.31.49 PM.png"></p>
+			
+			<p><img src="Screen Shot 2017-10-26 at 12.31.49 PM.png" width="960" height="800" align="middle"></p>
+			
 			<h3>Magnitude comparison task. </h3>
 		<div id="game" style='font-size: 40pt; background-color:black;' onkeydown="ll(event)" tabindex="0">
 		</div>
@@ -79,7 +84,40 @@ MathJax.Hub.Config({
 			<p>The second task was number line estimation (NLE) and it included one within-subjects variable (type) with four levels – natural numbers, one-digit radicals, perfect square radicals, and two-digit radicals. For each type, participants saw 11 numbers. The data from the smallest number and the largest number were not analyzed because these were one of the poles of the unmarked number line (i.e. 0 and 10 in all but one case). The first block consisted of the natural numbers 0, 1, 2, …, 10. The values 0 and 10 were not analyzed. The second block consisted of the one-digit radicals √(0 ), √(1 ), √2, …,  √(10 ). The values √(0 ) and √(10 ) were not analyzed, meaning all analyzed stimuli had one-digit radicands. The third block included the perfect squares √(0 ), √(1 ), √4, …, √100. The values √(0 ) and √(100 ) were not analyzed. The fourth block included the two-digit radicals √(0 ), √(10 ), √20, …, √100. The values √(0 ) and √(100 ) were not analyzed, meaning all analyzed stimuli had two-digit radicands. These stimulus sets include one confound. The values √(1 ), √(4 ), and √(9 ) are shared across two types – one-digit radicals and perfect square radicals. This was unavoidable; it was forced by the distribution of perfect squares. The 11 stimuli of each type were presented in random order within a block. There were 44 trials overall. </p>
 			<p>	Two dependent variables, average absolute error and linearity of estimates, were formed. Average absolute error was the absolute difference between a participant’s selected position and the target position. Linearity of estimates was the relationship between participants’ selected positions and target positions as estimated by linear regression (R2).</p>
 			<h3>Strategy questionnaire. </h3>
-			<p>The third task was the strategy questionnaire for the NLE task. Participants completed an eight-item paper-and-pencil strategy questionnaire composed of two prompts for each of the four blocks – natural numbers, one-digit radicals, perfect square radicals, and two-digit radicals. All prompts were in the form “How did you decide where to place x?”, where x was a value from one of the four blocks. See Table 1 for examples. The independent variable was number type (natural numbers, one-digit radicals, perfect square radicals, and two-digit radicals) and the dependent variable was self-reported estimation strategies.</p>
+			<p>The third task was the strategy questionnaire for the NLE task. Participants completed an eight-item paper-and-pencil strategy questionnaire composed of two prompts for each of the four blocks – natural numbers, one-digit radicals, perfect square radicals, and two-digit radicals. All prompts were in the form “How did you decide where to place x?”, where x was a value from one of the four blocks. You can copy and paste the following square root symbol into your document: √</p>
+			<form action="/action_page.php">
+  			<fieldset>
+   			 <legend>Strategy Questionnaire</legend>
+   			 <p> In this block of the task, you estimate the positions of the following numbers: </p> 
+   			 <p>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 </p>
+   	
+   			 
+   			 How do you decide where to place 7?<br>
+    		<input align="center" type="text" name="type" value="answer here">
+  			<br>
+  			<p> In this block of the task, you estimate the positions of the following numbers: </p> 
+   			 <p>√0, √1, √2, √3, √4, √5, √6, √7, √8, √9, √10 </p>
+  			 How do you decide where to place √2?<br>
+    		<input align="center" type="text" name="type" value="answer here">
+  			<br>
+  			<p> In this block of the task, you estimate the positions of the following numbers: </p> 
+   			 <p>√0, √2, √4, √9, √16, √25, √36, √49, √64, √81, √100 </p>
+  			 How do you decide where to place √9?<br>
+    		<input align="center" type="text" name="type" value="answer here">
+  			<br>
+  			<p> In this block of the task, you estimate the positions of the following numbers: </p> 
+   			 <p>√0, √10, √20, √30, √40, √50, √60, √70, √80, √90, √100 </p>
+  			 How do you decide where to place √40?<br>
+    		<input align="center" type="text" name="type" value="answer here">
+  			<br>
+  			
+   			<br>
+    		<input align="center" type="submit" value="Submit">
+  			</fieldset>
+			</form>
+
+			
+			<p>See Table 1 for examples. The independent variable was number type (natural numbers, one-digit radicals, perfect square radicals, and two-digit radicals) and the dependent variable was self-reported estimation strategies.</p>
 			<h3>Irrationals knowledge test. </h3>
 			<p>The forth task was the irrationals knowledge test. We constructed this novel paper-and-pencil test to measure conceptual and procedural knowledge of irrational numbers. Prior studies have investigated conceptual and procedural knowledge of rational numbers and arithmetic equivalence. We operationally define conceptual knowledge of irrational numbers as the ability to define this class, categorize particular numbers as members of it, and reason about its properties in relation to other number classes. We operationally define procedural knowledge of this class as the ability to simplify radical expressions and perform arithmetic operations on them. </p>
 			<p>Many items were adapted from prior studies documenting students’ misconceptions about irrational numbers. Conceptual items were distributed across three subsections. They required participants to (1) define the rational, irrational, and real number classes and classify numbers like π as either rational or irrational, (2) answer questions about the density of rational and irrational numbers, and (3)reason conceptually about the results of arithmetic operations on arbitrary rational and irrational numbers. Most of these items were in the selected response format. The procedural items were distributed over two subsections. Subsection (4) required performing simple arithmetic operations to reduce radical expressions and subsection (5) required evaluating complex arithmetic expressions by performing operations on multiple radical expressions. These were all fill-in-the-blank items. Example items from all five subsections are in Table 1; the full test is in the supplementary materials. Correct items earned one point each and partial credit was not awarded. Two dependent variables were computed – accuracy on each section and problem-solving strategies on subsection (5) – complex arithmetic.</p>
@@ -97,10 +135,8 @@ MathJax.Hub.Config({
 
 
 
-
-
 </dt-article>
-
+</dt-article>
 <dt-appendix>
 </dt-appendix>
 	<script>
@@ -225,6 +261,7 @@ function ll(event){
     showans(event.key);
     sleep(500).then(()=>{show_blank1();});
 }
+
 
 	</script>
 
