@@ -85,37 +85,47 @@ MathJax.Hub.Config({
 			<h3>Magnitude comparison task. </h3>
 		<div id="game11" style='background-color:black;' onkeydown="ll11(event)" tabindex="0">
 		</div>
+		<div id="game13" style='background-color:black;' onkeydown="ll13(event)" tabindex="0">
+		</div>
 			<p>The first task was magnitude comparison and its stimuli were defined by four variables – type, distance, size, and perfect square status. The type variable refers to whether a number pair consisted of natural numbers or radical expressions. The natural number pairs formed from the combinations of 0, 1, 2, …, 9 with same-number pairs like (3,3) excluded (90 pairs). We were particularly interested in pairs where both numbers were perfect squares, like (4, 9) or (√(4 ),√(9 )). Hence, we included an additional copy of each of the 12 perfect square pairs in the stimulus set. In total, 102 natural number pairs were used in each of blocks 1 and 2. Participants judged the greater of two numbers in the first block and the lesser in the second block. Natural number pairs were mirrored by 102 pairs of radical expressions formed in the same way from √(0 ), √(1 ), √2, …, √(9 ). These pairs were used in blocks 3 and 4. Block 3 required greater judgments and block 4 required lesser judgments. Within each block, number pairs were presented in random order. Overall, there were 408 trials. </p>
 			<p>For the distance and size variables, we used two definitions to evaluate the equivalence strategy and mental number line hypotheses (research question 1). The distance variable was the absolute difference between the numbers. The first definition of distance focused on the radicand components. Thus, the distance of the pair (√(4 ), √(9 )) was |4-9|=5. The second definition focused on the actual magnitude values of the radical expressions. Thus, the distance of the pair (√(4 ), √(9 )) was |√4-√9|=1. The size variable was defined as the average of the two numbers. The first definition again used the radicand components. Thus, the size of the pair (√(4 ), √(9 )) was ((4+9))⁄2=6.5. The second definition again used the actual magnitude values of the radical expressions. Thus, the size of the pair (√(4 ), √(9 )) was ((√4+√9))⁄2=2.5. The perfect square variable was defined by whether both natural numbers or radicands were perfect squares like (4, 9) or (√(4 ), √(9 )) or not. Two dependent variables, accuracy and response time (RT) in milliseconds, were collected.</p>
 			<h3>Number line estimation task. </h3>
             <p>The second task was number line estimation (NLE) and it included one within-subjects variable (type) with four levels – natural numbers, one-digit radicals, perfect square radicals, and two-digit radicals. For each type, participants saw 11 numbers. The data from the smallest number and the largest number were not analyzed because these were one of the poles of the unmarked number line (i.e. 0 and 10 in all but one case). </p>
             <p>The first block consisted of the natural numbers 0, 1, 2, …, 10. The values 0 and 10 were not analyzed. </p>
+				 <hr>
              <center>
 			<h4>Block 1. </h4>
              </center>
-            <div id="game21" onclick="aaa21(event)" tabindex="0" style='background-color:#F0F0F0;font-family: Verdana;width: 800px; height: 300px;' ></div>
+            <div id="game21" onclick="aaa21(event)" tabindex="0" style='background-color:#FFFFFF;font-family: Verdana;width: 800px; height: 300px;' ></div>
 
+				 <hr>
 
             <p>The second block consisted of the one-digit radicals √(0 ), √(1 ), √2, …,  √(10 ). The values √(0 ) and √(10 ) were not analyzed, meaning all analyzed stimuli had one-digit radicands. </p>
 
              <center>
+				 <hr>
             <h4>Block 2. </h4>
              </center>
-            <div id="game22" onclick="aaa22(event)" tabindex="0" style='background-color:#F0F0F0;font-family: Verdana;width: 800px; height: 300px;' ></div>
+            <div id="game22" onclick="aaa22(event)" tabindex="0" style='background-color:#FFFFFF;font-family: Verdana;width: 800px; height: 300px;' ></div>
+				 <hr>
 
             <p>The third block included the perfect squares √(0 ), √(1 ), √4, …, √100. The values √(0 ) and √(100 ) were not analyzed.</p>
 
+				 <hr>
              <center>
             <h4>Block 3. </h4>
              </center>
-            <div id="game23" onclick="aaa23(event)" tabindex="0" style='background-color:#F0F0F0;font-family: Verdana;width: 800px; height: 300px;' ></div>
+            <div id="game23" onclick="aaa23(event)" tabindex="0" style='background-color:#FFFFFF;font-family: Verdana;width: 800px; height: 300px;' ></div>
+				 <hr>
 
 
             <p> The fourth block included the two-digit radicals √(0 ), √(10 ), √20, …, √100. The values √(0 ) and √(100 ) were not analyzed, meaning all analyzed stimuli had two-digit radicands. These stimulus sets include one confound. The values √(1 ), √(4 ), and √(9 ) are shared across two types – one-digit radicals and perfect square radicals. This was unavoidable; it was forced by the distribution of perfect squares. </p>
+				 <hr>
              <center>
             <h4>Block 4. </h4>
              </center>
-            <div id="game24" onclick="aaa24(event)" tabindex="0" style='background-color:#F0F0F0;font-family: Verdana;width: 800px; height: 300px;' ></div>
+            <div id="game24" onclick="aaa24(event)" tabindex="0" style='background-color:#FFFFFF;font-family: Verdana;width: 800px; height: 300px;' ></div>
+				 <hr>
             <p>The 11 stimuli of each type were presented in random order within a block. There were 44 trials overall. </p>
 			<p>	Two dependent variables, average absolute error and linearity of estimates, were formed. Average absolute error was the absolute difference between a participant’s selected position and the target position. Linearity of estimates was the relationship between participants’ selected positions and target positions as estimated by linear regression (R2).</p>
 			<h3>Strategy questionnaire. </h3>
@@ -318,6 +328,513 @@ MathJax.Hub.Config({
 <dt-appendix>
 </dt-appendix>
 	<script>
+i1_14 = randomint();
+i2_14 = randomint();
+while(i2_14 === i1_14)
+    i2_14 = randomint();
+block14 = false;
+
+function sleep(ms) {
+      return new promise(resolve => settimeout(resolve, ms));
+}
+
+function randomint(){
+    a = math.random();
+    return math.floor(10*a);
+}
+function panel14(name,text){
+    a = document.createelement('div');
+    a.setattribute('id',name);
+    a.setattribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerhtml = "<font size='10'>"+text+"</font>";
+    return a;
+
+}
+function correct14(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
+    a.innerhtml = "<font size='10'>correct</font>";
+    return a;
+}
+function wrong14(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
+    a.innerhtml = "<font size='10'>incorrect</font>";
+    return a;
+}
+
+function blank14(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerhtml = " ";
+    return a;
+}
+function whitedot14(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+    a.innerhtml = "<font size='10'>.</font>";
+    return a;
+}
+
+function showans14(key){
+    g = document.getelementbyid('game14');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    if(i1_14 > i2_14 && key == "z" || i1_14 < i2_14 && key == "m")
+    {
+        g.appendchild(correct14())
+    }
+    else
+    {
+        g.appendchild(wrong14())
+    }
+    return;
+}
+
+function test1_14(){
+    console.log('asdsad');
+    g = document.getelementbyid('game14');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    i1_14 = randomint();
+    i2_14 = randomint();
+    while(i2_14 === i1_14)
+        i2_14 = randomint();
+    g.appendchild(panel14('leftpanel',i1_14.tostring()));
+    g.appendchild(panel14('rightpanel',i2_14.tostring()));
+    block14 = false;
+}
+function end14(){
+    g = document.getelementbyid('game14');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(endscene14());
+}
+function endscene14(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+	a.innerhtml = "<center>this is the end of the sample task. <br>you only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
+    return a;
+}
+function show_blank1_14(){
+    g = document.getelementbyid('game14');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(blank14());
+    sleep(250).then(()=>{show_dot14();});
+}
+function show_dot14(){
+    g = document.getelementbyid('game14');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(whitedot14());
+    sleep(1000).then(()=>{show_blank2_14();});
+}
+function show_blank2_14(){
+    g = document.getelementbyid('game14');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(blank14());
+    sleep(500).then(()=>{test1_14();});
+}
+
+function instructions14(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerhtml = "<center> welcome to the experiment ! <br> two numbers will be shown on the screen. <br> if the number on the left is greater, press the z key. <br> if the number on the right is greater, press the m key. <br><br><br> advance by pressing enter twice.</center>";
+    return a;
+
+}
+state14 = 0;
+document.getelementbyid('game14').appendchild(instructions14());
+function ll14(event){
+    if(state14 < 2){
+        if(event.key != "enter")
+            return;
+        state14++;
+        if(state14 == 2){
+            g = document.getelementbyid('game14');
+            while(g.haschildnodes())
+            {
+                g.removechild(g.lastchild);
+            }
+            g.appendchild(panel14('leftpanel',"√" + i1_14.tostring()));
+            g.appendchild(panel14('rightpanel',"√" + i2_14.tostring()));
+        }
+    }
+    if(block14)
+        return;
+    if(event.key != "z" && event.key != "m")
+        return;
+    block14 = true;
+    showans14(event.key);
+    state14++;
+    if(state14 < 7)
+		sleep(500).then(()=>{show_blank1_14();});
+	else
+		sleep(500).then(()=>{end14();});
+}
+
+
+	</script>
+	
+	<script>
+i1_13 = randomint();
+i2_13 = randomint();
+while(i2_13 === i1_13)
+    i2_13 = randomint();
+block13 = false;
+
+function sleep(ms) {
+      return new promise(resolve => settimeout(resolve, ms));
+}
+
+function randomint(){
+    a = math.random();
+    return math.floor(10*a);
+}
+function panel13(name,text){
+    a = document.createelement('div');
+    a.setattribute('id',name);
+    a.setattribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerhtml = "<font size='10'>"+text+"</font>";
+    return a;
+
+}
+function correct13(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
+    a.innerhtml = "<font size='10'>correct</font>";
+    return a;
+}
+function wrong13(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
+    a.innerhtml = "<font size='10'>incorrect</font>";
+    return a;
+}
+
+function blank13(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerhtml = " ";
+    return a;
+}
+function whitedot13(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+    a.innerhtml = "<font size='10'>.</font>";
+    return a;
+}
+
+function showans13(key){
+    g = document.getelementbyid('game13');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    if(i1_13 > i2_13 && key == "z" || i1_13 < i2_13 && key == "m")
+    {
+        g.appendchild(correct13())
+    }
+    else
+    {
+        g.appendchild(wrong13())
+    }
+    return;
+}
+
+function test1_13(){
+    console.log('asdsad');
+    g = document.getelementbyid('game13');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    i1_13 = randomint();
+    i2_13 = randomint();
+    while(i2_13 === i1_13)
+        i2_13 = randomint();
+    g.appendchild(panel13('leftpanel',i1_13.tostring()));
+    g.appendchild(panel13('rightpanel',i2_13.tostring()));
+    block13 = false;
+}
+function end13(){
+    g = document.getelementbyid('game13');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(endscene13());
+}
+function endscene13(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+	a.innerhtml = "<center>this is the end of the sample task. <br>you only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
+    return a;
+}
+function show_blank1_13(){
+    g = document.getelementbyid('game13');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(blank13());
+    sleep(250).then(()=>{show_dot13();});
+}
+function show_dot13(){
+    g = document.getelementbyid('game13');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(whitedot13());
+    sleep(1000).then(()=>{show_blank2_13();});
+}
+function show_blank2_13(){
+    g = document.getelementbyid('game13');
+    while(g.haschildnodes())
+    {
+        g.removechild(g.lastchild);
+    }
+    g.appendchild(blank13());
+    sleep(500).then(()=>{test1_13();});
+}
+
+function instructions13(){
+    a = document.createelement('div');
+    a.setattribute('id',"ans");
+    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerhtml = "<center> welcome to the experiment ! <br> two numbers will be shown on the screen. <br> if the number on the left is greater, press the z key. <br> if the number on the right is greater, press the m key. <br><br><br> advance by pressing enter twice.</center>";
+    return a;
+
+}
+state13 = 0;
+document.getelementbyid('game13').appendchild(instructions13());
+function ll13(event){
+    if(state13 < 2){
+        if(event.key != "enter")
+            return;
+        state13++;
+        if(state13 == 2){
+            g = document.getelementbyid('game13');
+            while(g.haschildnodes())
+            {
+                g.removechild(g.lastchild);
+            }
+            g.appendchild(panel13('leftpanel',"√" + i1_13.tostring()));
+            g.appendchild(panel13('rightpanel',"√" + i2_13.tostring()));
+        }
+    }
+    if(block13)
+        return;
+    if(event.key != "z" && event.key != "m")
+        return;
+    block13 = true;
+    showans13(event.key);
+    state13++;
+    if(state13 < 7)
+		sleep(500).then(()=>{show_blank1_13();});
+	else
+		sleep(500).then(()=>{end13();});
+}
+
+
+	</script>
+<script>
+i1_12 = randomInt();
+i2_12 = randomInt();
+while(i2_12 === i1_12)
+    i2_12 = randomInt();
+block12 = false;
+
+function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function randomInt(){
+    a = Math.random();
+    return Math.floor(10*a);
+}
+function panel12(name,text){
+    a = document.createElement('div');
+    a.setAttribute('id',name);
+    a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = "<font size='10'>"+text+"</font>";
+    return a;
+
+}
+function correct12(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
+    a.innerHTML = "<font size='10'>Correct</font>";
+    return a;
+}
+function wrong12(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
+    a.innerHTML = "<font size='10'>Incorrect</font>";
+    return a;
+}
+
+function blank12(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = " ";
+    return a;
+}
+function whitedot12(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+    a.innerHTML = "<font size='10'>.</font>";
+    return a;
+}
+
+function showans12(key){
+    g = document.getElementById('game12');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    if(i1_12 > i2_12 && key == "z" || i1_12 < i2_12 && key == "m")
+    {
+        g.appendChild(correct12())
+    }
+    else
+    {
+        g.appendChild(wrong12())
+    }
+    return;
+}
+
+function test1_12(){
+    console.log('asdsad');
+    g = document.getElementById('game12');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    i1_12 = randomInt();
+    i2_12 = randomInt();
+    while(i2_12 === i1_12)
+        i2_12 = randomInt();
+    g.appendChild(panel12('leftPanel',i1_12.toString()));
+    g.appendChild(panel12('rightPanel',i2_12.toString()));
+    block12 = false;
+}
+function end12(){
+    g = document.getElementById('game12');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(endscene12());
+}
+function endscene12(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+	a.innerHTML = "<center>This is the end of the sample task. <br>You only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
+    return a;
+}
+function show_blank1_12(){
+    g = document.getElementById('game12');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(blank12());
+    sleep(250).then(()=>{show_dot12();});
+}
+function show_dot12(){
+    g = document.getElementById('game12');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(whitedot12());
+    sleep(1000).then(()=>{show_blank2_12();});
+}
+function show_blank2_12(){
+    g = document.getElementById('game12');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(blank12());
+    sleep(500).then(()=>{test1_12();});
+}
+
+function instructions12(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = "<center> Welcome to the experiment ! <br> Two numbers will be shown on the screen. <br> If the number on the left is greater, press the z key. <br> If the number on the right is greater, press the m key. <br><br><br> Advance by pressing Enter twice.</center>";
+    return a;
+
+}
+state12 = 0;
+document.getElementById('game12').appendChild(instructions12());
+function ll12(event){
+    if(state12 < 2){
+        if(event.key != "Enter")
+            return;
+        state12++;
+        if(state12 == 2){
+            g = document.getElementById('game12');
+            while(g.hasChildNodes())
+            {
+                g.removeChild(g.lastChild);
+            }
+            g.appendChild(panel12('leftPanel',i1_12.toString()));
+            g.appendChild(panel12('rightPanel',i2_12.toString()));
+        }
+    }
+    if(block12)
+        return;
+    if(event.key != "z" && event.key != "m")
+        return;
+    block12 = true;
+    showans12(event.key);
+    state12++;
+    if(state12 < 7)
+		sleep(500).then(()=>{show_blank1_12();});
+	else
+		sleep(500).then(()=>{end12();});
+}
+
+
+	</script>
+
+
+	<script>
 i1_11 = randomInt();
 i2_11 = randomInt();
 while(i2_11 === i1_11)
@@ -402,7 +919,23 @@ function test1_11(){
     g.appendChild(panel11('rightPanel',i2_11.toString()));
     block11 = false;
 }
+function end11(){
+    g = document.getElementById('game11');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    g.appendChild(endscene11());
+}
+function endscene11(){
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+	a.innerHTML = "<center>This is the end of the sample task. <br>You only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
+    return a;
+}
 function show_blank1_11(){
+    g = document.getElementById('game11');
     while(g.hasChildNodes())
     {
         g.removeChild(g.lastChild);
@@ -411,6 +944,7 @@ function show_blank1_11(){
     sleep(250).then(()=>{show_dot11();});
 }
 function show_dot11(){
+    g = document.getElementById('game11');
     while(g.hasChildNodes())
     {
         g.removeChild(g.lastChild);
@@ -419,6 +953,7 @@ function show_dot11(){
     sleep(1000).then(()=>{show_blank2_11();});
 }
 function show_blank2_11(){
+    g = document.getElementById('game11');
     while(g.hasChildNodes())
     {
         g.removeChild(g.lastChild);
@@ -458,7 +993,11 @@ function ll11(event){
         return;
     block11 = true;
     showans11(event.key);
-    sleep(500).then(()=>{show_blank1_11();});
+    state11++;
+    if(state11 < 7)
+		sleep(500).then(()=>{show_blank1_11();});
+	else
+		sleep(500).then(()=>{end11();});
 }
 
 
@@ -491,8 +1030,33 @@ function aaa21(event){
     block21 = true;
     x = event.clientX;
     maxX = event.target.offsetWidth;
-    sleep(500).then(()=>{problem21();});
+    state21++;
+    if(state21 < 7)
+		sleep(1500).then(()=>{problem21();});
+	else
+		sleep(1500).then(()=>{end21();});
     return;
+}
+function end21(){
+    block22 = false;
+    g  =document.getElementById('game21');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    ll = document.createElement('div');
+    g.appendChild(endscene22());
+}
+function endscene21(){
+    ll = document.createElement('div');
+    ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br>This is the end of the sample task block. <br>You only experienced 5 trials out of 11 total trials used in the actual study (~ 45%).</center>";
+    aa = document.createElement('div');
+    aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    aa.innerHTML = "<center><b></b></center>";
+    ll.appendChild(aa);
+    return ll;
 }
 function line21(){
     ll = document.createElement('div');
@@ -561,7 +1125,7 @@ function click_next_to_begin21(){
 function ss21(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br><br>Click next to begin the experiment.</center>";
     aa = document.createElement('div');
     aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     aa.innerHTML = "<center><b>next</b></center>";
@@ -587,7 +1151,7 @@ function Finished21(){
 function ii21(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    ll.innerHTML = "In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br>To begin, click once on the words shown.";
+	ll.innerHTML = "<br><br><center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
     return ll;
 }
 
@@ -623,7 +1187,12 @@ function aaa22(event){
     block22 = true;
     x = event.clientX;
     maxX = event.target.offsetWidth;
-    sleep(500).then(()=>{problem22();});
+	if(state22 > 5)
+		sleep(1500).then(()=>{end22();});
+	else
+		sleep(1500).then(()=>{problem22();});
+    state22++;
+
     return;
 }
 function line22(){
@@ -689,10 +1258,32 @@ function click_next_to_begin22(){
     }
     g.appendChild(ii22());
 }
+function end22(){
+    block22 = false;
+    g  =document.getElementById('game22');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    ll = document.createElement('div');
+    g.appendChild(endscene22());
+}
+function endscene22(){
+    ll = document.createElement('div');
+    ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br>This is the end of the sample task block. <br>You only experienced 5 trials out of 11 total trials used in the actual study (~ 45%).</center>";
+    aa = document.createElement('div');
+    aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    aa.innerHTML = "<center><b></b></center>";
+    ll.appendChild(aa);
+    return ll;
+}
 function ss22(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br><br>Click next to begin the experiment.</center>";
     aa = document.createElement('div');
     aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     aa.innerHTML = "<center><b>next</b></center>";
@@ -719,6 +1310,8 @@ function ii22(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     ll.innerHTML = "In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br>To begin, click once on the words shown.";
+	ll.innerHTML = "<center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
+	ll.innerHTML = "<br><br><center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
     return ll;
 }
 
@@ -754,8 +1347,33 @@ function aaa23(event){
     block23 = true;
     x = event.clientX;
     maxX = event.target.offsetWidth;
-    sleep(500).then(()=>{problem23();});
+	if(state23 < 6)
+		sleep(1500).then(()=>{problem23();});
+	else
+		sleep(1500).then(()=>{end23();});
+    state23++;
     return;
+}
+function end23(){
+    block23 = false;
+    g  =document.getElementById('game23');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    ll = document.createElement('div');
+    g.appendChild(endscene23());
+}
+function endscene23(){
+    ll = document.createElement('div');
+    ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br>This is the end of the sample task block. <br>You only experienced 5 trials out of 11 total trials used in the actual study (~ 45%).</center>";
+    aa = document.createElement('div');
+    aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    aa.innerHTML = "<center><b></b></center>";
+    ll.appendChild(aa);
+    return ll;
 }
 function line23(){
     ll = document.createElement('div');
@@ -825,6 +1443,7 @@ function ss23(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br><br>Click next to begin the experiment.</center>";
     aa = document.createElement('div');
     aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     aa.innerHTML = "<center><b>next</b></center>";
@@ -851,6 +1470,8 @@ function ii23(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     ll.innerHTML = "In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br>To begin, click once on the words shown.";
+	ll.innerHTML = "<center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
+	ll.innerHTML = "<br><br><center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
     return ll;
 }
 
@@ -885,8 +1506,33 @@ function aaa24(event){
     block24 = true;
     x = event.clientX;
     maxX = event.target.offsetWidth;
-    sleep(500).then(()=>{problem24();});
+	if(state24 < 6)
+		sleep(1500).then(()=>{problem24();});
+	else
+		sleep(1500).then(()=>{end24();});
+    state24++;
     return;
+}
+function end24(){
+    block24 = false;
+    g  =document.getElementById('game24');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    ll = document.createElement('div');
+    g.appendChild(endscene24());
+}
+function endscene24(){
+    ll = document.createElement('div');
+    ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br>This is the end of the sample task block. <br>You only experienced 5 trials out of 11 total trials used in the actual study (~ 45%).</center>";
+    aa = document.createElement('div');
+    aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    aa.innerHTML = "<center><b></b></center>";
+    ll.appendChild(aa);
+    return ll;
 }
 function line24(){
     ll = document.createElement('div');
@@ -956,6 +1602,7 @@ function ss24(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     ll.innerHTML = "<center>Click next to begin the experiment.</center>";
+	ll.innerHTML = "<center><br><br><br><br>Click next to begin the experiment.</center>";
     aa = document.createElement('div');
     aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     aa.innerHTML = "<center><b>next</b></center>";
@@ -981,7 +1628,7 @@ function Finished24(){
 function ii24(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    ll.innerHTML = "In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br>To begin, click once on the words shown.";
+	ll.innerHTML = "<br><br><center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
     return ll;
 }
 
