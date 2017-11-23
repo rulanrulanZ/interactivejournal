@@ -83,9 +83,17 @@ MathJax.Hub.Config({
 			<p><img src="Screen Shot 2017-10-26 at 12.31.49 PM.png" width="960" height="800" align="middle"></p>
 			
 			<h3>Magnitude comparison task. </h3>
+		<p>11</p>
 		<div id="game11" style='background-color:black;' onkeydown="ll11(event)" tabindex="0">
 		</div>
+		<p>12</p>
+		<div id="game12" style='background-color:black;' onkeydown="ll12(event)" tabindex="0">
+		</div>
+		<p>13</p>
 		<div id="game13" style='background-color:black;' onkeydown="ll13(event)" tabindex="0">
+		</div>
+		<p>14</p>
+		<div id="game14" style='background-color:black;' onkeydown="ll14(event)" tabindex="0">
 		</div>
 			<p>The first task was magnitude comparison and its stimuli were defined by four variables – type, distance, size, and perfect square status. The type variable refers to whether a number pair consisted of natural numbers or radical expressions. The natural number pairs formed from the combinations of 0, 1, 2, …, 9 with same-number pairs like (3,3) excluded (90 pairs). We were particularly interested in pairs where both numbers were perfect squares, like (4, 9) or (√(4 ),√(9 )). Hence, we included an additional copy of each of the 12 perfect square pairs in the stimulus set. In total, 102 natural number pairs were used in each of blocks 1 and 2. Participants judged the greater of two numbers in the first block and the lesser in the second block. Natural number pairs were mirrored by 102 pairs of radical expressions formed in the same way from √(0 ), √(1 ), √2, …, √(9 ). These pairs were used in blocks 3 and 4. Block 3 required greater judgments and block 4 required lesser judgments. Within each block, number pairs were presented in random order. Overall, there were 408 trials. </p>
 			<p>For the distance and size variables, we used two definitions to evaluate the equivalence strategy and mental number line hypotheses (research question 1). The distance variable was the absolute difference between the numbers. The first definition of distance focused on the radicand components. Thus, the distance of the pair (√(4 ), √(9 )) was |4-9|=5. The second definition focused on the actual magnitude values of the radical expressions. Thus, the distance of the pair (√(4 ), √(9 )) was |√4-√9|=1. The size variable was defined as the average of the two numbers. The first definition again used the radicand components. Thus, the size of the pair (√(4 ), √(9 )) was ((4+9))⁄2=6.5. The second definition again used the actual magnitude values of the radical expressions. Thus, the size of the pair (√(4 ), √(9 )) was ((√4+√9))⁄2=2.5. The perfect square variable was defined by whether both natural numbers or radicands were perfect squares like (4, 9) or (√(4 ), √(9 )) or not. Two dependent variables, accuracy and response time (RT) in milliseconds, were collected.</p>
@@ -327,157 +335,158 @@ MathJax.Hub.Config({
 </dt-article>
 <dt-appendix>
 </dt-appendix>
-	<script>
-i1_14 = randomint();
-i2_14 = randomint();
+
+<script>
+i1_14 = randomInt();
+i2_14 = randomInt();
 while(i2_14 === i1_14)
-    i2_14 = randomint();
+    i2_14 = randomInt();
 block14 = false;
 
 function sleep(ms) {
-      return new promise(resolve => settimeout(resolve, ms));
+      return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function randomint(){
-    a = math.random();
-    return math.floor(10*a);
+function randomInt(){
+    a = Math.random();
+    return Math.floor(10*a);
 }
 function panel14(name,text){
-    a = document.createelement('div');
-    a.setattribute('id',name);
-    a.setattribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
-    a.innerhtml = "<font size='10'>"+text+"</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',name);
+    a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = "<font size='10'>"+text+"</font>";
     return a;
 
 }
 function correct14(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
-    a.innerhtml = "<font size='10'>correct</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
+    a.innerHTML = "<font size='10'>Correct</font>";
     return a;
 }
 function wrong14(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
-    a.innerhtml = "<font size='10'>incorrect</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
+    a.innerHTML = "<font size='10'>Incorrect</font>";
     return a;
 }
 
 function blank14(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
-    a.innerhtml = " ";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = " ";
     return a;
 }
 function whitedot14(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
-    a.innerhtml = "<font size='10'>.</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+    a.innerHTML = "<font size='10'>.</font>";
     return a;
 }
 
 function showans14(key){
-    g = document.getelementbyid('game14');
-    while(g.haschildnodes())
+    g = document.getElementById('game14');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
     if(i1_14 > i2_14 && key == "z" || i1_14 < i2_14 && key == "m")
     {
-        g.appendchild(correct14())
+        g.appendChild(wrong14())
     }
     else
     {
-        g.appendchild(wrong14())
+        g.appendChild(correct14())
     }
     return;
 }
 
 function test1_14(){
     console.log('asdsad');
-    g = document.getelementbyid('game14');
-    while(g.haschildnodes())
+    g = document.getElementById('game14');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    i1_14 = randomint();
-    i2_14 = randomint();
+    i1_14 = randomInt();
+    i2_14 = randomInt();
     while(i2_14 === i1_14)
-        i2_14 = randomint();
-    g.appendchild(panel14('leftpanel',i1_14.tostring()));
-    g.appendchild(panel14('rightpanel',i2_14.tostring()));
+        i2_14 = randomInt();
+    g.appendChild(panel14('leftPanel',"√" + i1_14.toString()));
+    g.appendChild(panel14('rightPanel',"√" + i2_14.toString()));
     block14 = false;
 }
 function end14(){
-    g = document.getelementbyid('game14');
-    while(g.haschildnodes())
+    g = document.getElementById('game14');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(endscene14());
+    g.appendChild(endscene14());
 }
 function endscene14(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
-	a.innerhtml = "<center>this is the end of the sample task. <br>you only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+	a.innerHTML = "<center>This is the end of the sample task. <br>You only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
     return a;
 }
 function show_blank1_14(){
-    g = document.getelementbyid('game14');
-    while(g.haschildnodes())
+    g = document.getElementById('game14');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(blank14());
+    g.appendChild(blank14());
     sleep(250).then(()=>{show_dot14();});
 }
 function show_dot14(){
-    g = document.getelementbyid('game14');
-    while(g.haschildnodes())
+    g = document.getElementById('game14');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(whitedot14());
+    g.appendChild(whitedot14());
     sleep(1000).then(()=>{show_blank2_14();});
 }
 function show_blank2_14(){
-    g = document.getelementbyid('game14');
-    while(g.haschildnodes())
+    g = document.getElementById('game14');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(blank14());
+    g.appendChild(blank14());
     sleep(500).then(()=>{test1_14();});
 }
 
 function instructions14(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
-    a.innerhtml = "<center> welcome to the experiment ! <br> two numbers will be shown on the screen. <br> if the number on the left is greater, press the z key. <br> if the number on the right is greater, press the m key. <br><br><br> advance by pressing enter twice.</center>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+	a.innerHTML = "<center> Welcome to the experiment ! <br> Two numbers will be shown on the screen. <br> If the number on the left is lesser, press the z key. <br> If the number on the right is lesser, press the m key. <br><br><br> Advance by pressing Enter twice.</center>";
     return a;
 
 }
 state14 = 0;
-document.getelementbyid('game14').appendchild(instructions14());
+document.getElementById('game14').appendChild(instructions14());
 function ll14(event){
     if(state14 < 2){
-        if(event.key != "enter")
+        if(event.key != "Enter")
             return;
         state14++;
         if(state14 == 2){
-            g = document.getelementbyid('game14');
-            while(g.haschildnodes())
+            g = document.getElementById('game14');
+            while(g.hasChildNodes())
             {
-                g.removechild(g.lastchild);
+                g.removeChild(g.lastChild);
             }
-            g.appendchild(panel14('leftpanel',"√" + i1_14.tostring()));
-            g.appendchild(panel14('rightpanel',"√" + i2_14.tostring()));
+            g.appendChild(panel14('leftPanel',"√" + i1_14.toString()));
+            g.appendChild(panel14('rightPanel',"√" + i2_14.toString()));
         }
     }
     if(block14)
@@ -495,158 +504,160 @@ function ll14(event){
 
 
 	</script>
-	
-	<script>
-i1_13 = randomint();
-i2_13 = randomint();
+
+
+
+<script>
+i1_13 = randomInt();
+i2_13 = randomInt();
 while(i2_13 === i1_13)
-    i2_13 = randomint();
+    i2_13 = randomInt();
 block13 = false;
 
 function sleep(ms) {
-      return new promise(resolve => settimeout(resolve, ms));
+      return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function randomint(){
-    a = math.random();
-    return math.floor(10*a);
+function randomInt(){
+    a = Math.random();
+    return Math.floor(10*a);
 }
 function panel13(name,text){
-    a = document.createelement('div');
-    a.setattribute('id',name);
-    a.setattribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
-    a.innerhtml = "<font size='10'>"+text+"</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',name);
+    a.setAttribute('style',"float: left;width:50%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = "<font size='10'>"+text+"</font>";
     return a;
 
 }
 function correct13(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
-    a.innerhtml = "<font size='10'>correct</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:green; background-color:black");
+    a.innerHTML = "<font size='10'>Correct</font>";
     return a;
 }
 function wrong13(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
-    a.innerhtml = "<font size='10'>incorrect</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:red; background-color:black");
+    a.innerHTML = "<font size='10'>Incorrect</font>";
     return a;
 }
 
 function blank13(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
-    a.innerhtml = " ";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = " ";
     return a;
 }
 function whitedot13(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
-    a.innerhtml = "<font size='10'>.</font>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+    a.innerHTML = "<font size='10'>.</font>";
     return a;
 }
 
 function showans13(key){
-    g = document.getelementbyid('game13');
-    while(g.haschildnodes())
+    g = document.getElementById('game13');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
     if(i1_13 > i2_13 && key == "z" || i1_13 < i2_13 && key == "m")
     {
-        g.appendchild(correct13())
+        g.appendChild(correct13())
     }
     else
     {
-        g.appendchild(wrong13())
+        g.appendChild(wrong13())
     }
     return;
 }
 
 function test1_13(){
     console.log('asdsad');
-    g = document.getelementbyid('game13');
-    while(g.haschildnodes())
+    g = document.getElementById('game13');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    i1_13 = randomint();
-    i2_13 = randomint();
+    i1_13 = randomInt();
+    i2_13 = randomInt();
     while(i2_13 === i1_13)
-        i2_13 = randomint();
-    g.appendchild(panel13('leftpanel',i1_13.tostring()));
-    g.appendchild(panel13('rightpanel',i2_13.tostring()));
+        i2_13 = randomInt();
+    g.appendChild(panel13('leftPanel',"√"+ i1_13.toString()));
+    g.appendChild(panel13('rightPanel',"√" + i2_13.toString()));
     block13 = false;
 }
 function end13(){
-    g = document.getelementbyid('game13');
-    while(g.haschildnodes())
+    g = document.getElementById('game13');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(endscene13());
+    g.appendChild(endscene13());
 }
 function endscene13(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
-	a.innerhtml = "<center>this is the end of the sample task. <br>you only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black; ");
+	a.innerHTML = "<center>This is the end of the sample task. <br>You only experienced 5 trials out of 102 total trials used in the actual study (4.9%).</center>";
     return a;
 }
 function show_blank1_13(){
-    g = document.getelementbyid('game13');
-    while(g.haschildnodes())
+    g = document.getElementById('game13');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(blank13());
+    g.appendChild(blank13());
     sleep(250).then(()=>{show_dot13();});
 }
 function show_dot13(){
-    g = document.getelementbyid('game13');
-    while(g.haschildnodes())
+    g = document.getElementById('game13');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(whitedot13());
+    g.appendChild(whitedot13());
     sleep(1000).then(()=>{show_blank2_13();});
 }
 function show_blank2_13(){
-    g = document.getelementbyid('game13');
-    while(g.haschildnodes())
+    g = document.getElementById('game13');
+    while(g.hasChildNodes())
     {
-        g.removechild(g.lastchild);
+        g.removeChild(g.lastChild);
     }
-    g.appendchild(blank13());
+    g.appendChild(blank13());
     sleep(500).then(()=>{test1_13();});
 }
 
 function instructions13(){
-    a = document.createelement('div');
-    a.setattribute('id',"ans");
-    a.setattribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
-    a.innerhtml = "<center> welcome to the experiment ! <br> two numbers will be shown on the screen. <br> if the number on the left is greater, press the z key. <br> if the number on the right is greater, press the m key. <br><br><br> advance by pressing enter twice.</center>";
+    a = document.createElement('div');
+    a.setAttribute('id',"ans");
+    a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
+    a.innerHTML = "<center> Welcome to the experiment ! <br> Two numbers will be shown on the screen. <br> If the number on the left is greater, press the z key. <br> If the number on the right is greater, press the m key. <br><br><br> Advance by pressing Enter twice.</center>";
     return a;
 
 }
 state13 = 0;
-document.getelementbyid('game13').appendchild(instructions13());
+document.getElementById('game13').appendChild(instructions13());
 function ll13(event){
     if(state13 < 2){
-        if(event.key != "enter")
+        if(event.key != "Enter")
             return;
         state13++;
         if(state13 == 2){
-            g = document.getelementbyid('game13');
-            while(g.haschildnodes())
+            g = document.getElementById('game13');
+            while(g.hasChildNodes())
             {
-                g.removechild(g.lastchild);
+                g.removeChild(g.lastChild);
             }
-            g.appendchild(panel13('leftpanel',"√" + i1_13.tostring()));
-            g.appendchild(panel13('rightpanel',"√" + i2_13.tostring()));
+            g.appendChild(panel13('leftPanel',"√" + i1_13.toString()));
+            g.appendChild(panel13('rightPanel',"√" + i2_13.toString()));
         }
     }
     if(block13)
@@ -664,6 +675,9 @@ function ll13(event){
 
 
 	</script>
+
+
+
 <script>
 i1_12 = randomInt();
 i2_12 = randomInt();
@@ -725,11 +739,11 @@ function showans12(key){
     }
     if(i1_12 > i2_12 && key == "z" || i1_12 < i2_12 && key == "m")
     {
-        g.appendChild(correct12())
+        g.appendChild(wrong12())
     }
     else
     {
-        g.appendChild(wrong12())
+        g.appendChild(correct12())
     }
     return;
 }
@@ -796,7 +810,7 @@ function instructions12(){
     a = document.createElement('div');
     a.setAttribute('id',"ans");
     a.setAttribute('style',"float: left;width:100%;height:400px;background-color:black;display:flex; align-items:center;justify-content:center; color:white; background-color:black");
-    a.innerHTML = "<center> Welcome to the experiment ! <br> Two numbers will be shown on the screen. <br> If the number on the left is greater, press the z key. <br> If the number on the right is greater, press the m key. <br><br><br> Advance by pressing Enter twice.</center>";
+    a.innerHTML = "<center> Welcome to the experiment ! <br> Two numbers will be shown on the screen. <br> If the number on the left is lesser, press the z key. <br> If the number on the right is lesser, press the m key. <br><br><br> Advance by pressing Enter twice.</center>";
     return a;
 
 }
