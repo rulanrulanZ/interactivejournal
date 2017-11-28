@@ -1064,7 +1064,6 @@ function end21(){
 function endscene21(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
 	ll.innerHTML = "<center><br><br><br>This was a sample block. <br> <br> You only experienced 5 out of 11 actual trials (~ 45%).</center>";
     aa = document.createElement('div');
     aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
@@ -1201,13 +1200,32 @@ function aaa22(event){
     block22 = true;
     x = event.clientX;
     maxX = event.target.offsetWidth;
-	if(state22 > 5)
-		sleep(1500).then(()=>{end22();});
-	else
-		sleep(1500).then(()=>{problem22();});
     state22++;
-
+    if(state22 < 7)
+		sleep(1500).then(()=>{problem22();});
+	else
+		sleep(1500).then(()=>{end22();});
     return;
+}
+function end22(){
+    block22 = false;
+    g  =document.getElementById('game22');
+    while(g.hasChildNodes())
+    {
+        g.removeChild(g.lastChild);
+    }
+    ll = document.createElement('div');
+    g.appendChild(endscene22());
+}
+function endscene22(){
+    ll = document.createElement('div');
+    ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+	ll.innerHTML = "<center><br><br><br>This was a sample block. <br> <br> You only experienced 5 out of 11 actual trials (~ 45%).</center>";
+    aa = document.createElement('div');
+    aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
+    aa.innerHTML = "<center><b></b></center>";
+    ll.appendChild(aa);
+    return ll;
 }
 function line22(){
     ll = document.createElement('div');
@@ -1239,8 +1257,9 @@ function label22(){
 }
 function instructions22(){
     ll = document.createElement('div');
+
     i1 = randomInt();
-ll.innerHTML = "<br><br><center>Estimate the position of <b> √"+i1.toString()+" </b> on the number line shown.</center>";
+    ll.innerHTML = "<br><br><center>Estimate the position of <b> √"+i1.toString()+"</b> on the number line shown.</center>";
     ll.setAttribute('style',"float: left;width:100%;height:25%;font-size: 1.55vw;align-items:center;justify-content:center;");
     return ll;
 }
@@ -1272,35 +1291,11 @@ function click_next_to_begin22(){
     }
     g.appendChild(ii22());
 }
-function end22(){
-    block22 = false;
-    g  =document.getElementById('game22');
-    while(g.hasChildNodes())
-    {
-        g.removeChild(g.lastChild);
-    }
-    ll = document.createElement('div');
-    g.appendChild(endscene22());
-}
-
-function endscene22(){
-    ll = document.createElement('div');
-    ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
-	ll.innerHTML = "<center><br><br><br>This was a sample block. <br><br> You only experienced 5 out of 11 actual trials (~ 45%).</center>";
-    aa = document.createElement('div');
-    aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    aa.innerHTML = "<center><b></b></center>";
-    ll.appendChild(aa);
-    return ll;
-}
 function ss22(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    ll.innerHTML = "<center>Click next to begin the experiment.</center>";
 	ll.innerHTML = "<center><br><br><br><br>Click next to begin the experiment.</center>";
-    aa = document.creat
-    eElement('div');
+    aa = document.createElement('div');
     aa.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
     aa.innerHTML = "<center><b>next</b></center>";
     ll.appendChild(aa);
@@ -1325,8 +1320,6 @@ function Finished22(){
 function ii22(){
     ll = document.createElement('div');
     ll.setAttribute('style',"float: left;width:100%;height:50%;font-size: 1.3vw;align-items:center;justify-content:center;");
-    ll.innerHTML = "In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br>To begin, click once on the words shown.";
-	ll.innerHTML = "<center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
 	ll.innerHTML = "<br><br><center>In the following tasks, you will be shown different numbers.<br> Please estimate their positions as accurately as possible by left-clicking on the number line. <br><br>To begin, click <b> here</b>.</center>";
     return ll;
 }
@@ -1335,7 +1328,6 @@ function ii22(){
 start22();
 
 	</script>
-
 	<script>
 block23 = false;
 state23 = 0;
